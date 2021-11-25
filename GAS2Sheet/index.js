@@ -17,7 +17,7 @@
                 var n = this;
                 n.loading = 1;
                 $.ajax({
-                    url: "https://script.google.com/macros/s/AKfycbx0IKWCuQy27Nj9_4cYrvRvIb6SU0tKrHQoWTZKqXVRGqX_qBGuxNUgZzIHxdwQPdHr/exec",
+                    url: "https://script.google.com/macros/s/AKfycbzBQvle2Pu1yaWU2W3pneOAu49Hg8aGR8yiI4KGP1zXexvn3vshVjjSdLr3dlza_yAr/exec",
                     data: {
                         "id": this.person.id,
                         "name": this.person.name,
