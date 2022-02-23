@@ -69,8 +69,8 @@
 
 .form-group {
     margin-bottom: 1rem;
-    padding-left: 20vh;
-    padding-right: 20vh;
+    padding-left: .75rem;
+    padding-right: .75rem;
 }
 
 label {
@@ -84,7 +84,7 @@ label {
 }
 
     .prepend input {
-        padding-left: 3.5rem
+        padding-left: .75rem
     }
 
 .pre {
@@ -220,8 +220,8 @@ a {
 
 @media(max-width: 640px) {
     .w-640 {
-        padding-right: 15px;
-        padding-left: 15px
+        padding-right: .75rem;
+        padding-left: .75rem
     }
 }
 
