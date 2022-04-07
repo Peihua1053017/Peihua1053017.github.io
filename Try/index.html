@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>表單</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link href="index.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="double-wrap" :class="{ hide: !loading }">
+            <div class="double">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+        <div class="col page">
+            <div class="row-flex divGrid">
+                <h1>簽到頁面</h1>
+                <label>________________________</label>
+                <br>
+                <label class="Q" for="main_id">員工編號</label>
+                <label class="reMark" for="main_id">若無員編請填除英文外之身分證字號9碼</label>
+                <div class="two-col divContent">
+                    <input class="form-control leftCol" id="main_id" type="number" v-model="id" @input="limitIdLen(id)" />
+                    <div class="submit rightCol"><a href="#" @click.prevent="submit">送出</a></div>
+                </div>
+                <div class="two-col divContent">
+                    <label class="Q col" for="name">姓名</label>
+                    <input class="form-control col" id="name" type="text" v-model="person.name" disabled="disabled" />
+                </div>
+                <div class="two-col divContent">
+                    <label class="Q col" for="unit">服務單位</label>
+                    <input class="form-control col" id="unit" type="text" v-model="person.unit" disabled="disabled" />
+                </div>
+            </div>
+            <div class="row-flex divGrid">
+                <div class="col">
+                    <div class="two-col divContent">
+                        <label class="Q col" for="class_no">訓練班編號</label>
+                        <input class="form-control col" id="class_no" type="text" v-model="person.class_no" :disabled="person.name == undefined" />
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="two-col divContent">
+                        <label class="Q col" for="class_name">訓練班名稱</label>
+                        <input class="col form-control" id="class_name" type="number" v-model="person.class_name" :disabled="person.name == undefined" />
+                    </div>
+                </div>
+            </div>
+            <div class="submit"><a href="#" :class="{ disabled: person.name == undefined || person.seat == undefined || person.temperature == undefined}" @click.prevent="submit">送出</a></div>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>
