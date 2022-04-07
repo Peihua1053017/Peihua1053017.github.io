@@ -204,7 +204,7 @@ label {
 .divContent {
     text-align: center;
     margin: 1vh;
-    padding:  1vh;
+    padding: 1vh;
 }
 img {
     max-width: 100%
@@ -237,10 +237,10 @@ a {
 .w-640 {
     margin-right: auto;
     margin-left: auto;
-    max-width: 640px
+    min-width: 640px
 }
 
-@media(max-width: 640px) {
+@media(min-width: 640px) {
     .w-640 {
         padding-right: 15px;
         padding-left: 15px
@@ -261,7 +261,7 @@ a {
             height: auto
         }
 
-@media(max-width: 640px) {
+@media(min-width: 640px) {
     .kv {
         padding-right: 0;
         padding-left: 0
@@ -280,13 +280,13 @@ a {
         width: 50%
     }
     .two-col .leftCol {
-        width: 80%
+        width: 70%
     }
     .two-col .rightCol {
-        width: 20%
+        width: 30%
     }
 
-@media(max-width: 640px) {
+@media(min-width: 640px) {
     .two-col {
         flex-wrap: wrap
     }
