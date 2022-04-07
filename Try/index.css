@@ -196,14 +196,14 @@ label {
 .divGrid {
     text-align: center;
     font-family: 'fantasy','DFKai-sb';
-    margin: 4vh 7vh 4vh 7vh;
+    margin: 1vh 3vh 1vh 3vh;
     padding: 1vh;
     border-radius: 50px;
     background-color: white;
 }
 .divContent {
     text-align: center;
-    margin:3vh;
+    margin: 1vh;
     padding:  1vh;
 }
 img {
