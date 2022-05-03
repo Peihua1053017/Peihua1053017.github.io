@@ -2,6 +2,10 @@
     box-sizing: border-box
 }
 
+.hide {
+    display: none;
+}
+
 .form-control {
     width: 50%;
     height: calc(1.5em + 0.75rem + 2px);
@@ -190,9 +194,17 @@ label {
 }
 
 .page {
-    background-color: cadetblue 
+    background-color:  cadetblue
 }
 
+.divHead {
+    text-align: center;
+    font-family: 'fantasy','DFKai-sb';
+    margin: 1vh 3vh 1vh 3vh;
+    padding: 1vh;
+    border-radius: 50px;
+    background: linear-gradient(to bottom, darkcyan 0%, lightcyan 20%, white 20%, white 100% );
+}
 .divGrid {
     text-align: center;
     font-family: 'fantasy','DFKai-sb';
@@ -203,7 +215,7 @@ label {
 }
 .divContent {
     text-align: center;
-    margin: 3vh 1vh 3vh 1vh ;
+    margin: 5vh 1vh 5vh 1vh ;
     padding: 1vh;
 }
 img {
@@ -211,7 +223,6 @@ img {
 }
 
 h1 {
-    line-height: 1.5;
     font-size: 28px
 }
 
@@ -279,13 +290,21 @@ a {
     .two-col .col {
         width: 50%
     }
-    .two-col .leftCol {
-        width: 70%
-    }
-    .two-col .rightCol {
+
+.three-col {
+    display: flex;
+}
+    .three-col .leftCol {
         width: 30%
     }
 
+    .three-col .midCol {
+        width: 30%
+    }
+
+    .three-col .rightCol {
+        width: 30%
+    }
 @media(max-width: 640px) {
     .two-col {
         flex-wrap: wrap

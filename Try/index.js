@@ -3,15 +3,32 @@
     new Vue({
         el: "#app",
         data: {
-            gas: "https://script.google.com/macros/s/AKfycbzJPK-0y3gKNLsrm4tnp9EO8sIMApXBIlj-R6YeCpxLjiKEHqHQ_Ibu3n6aUGWHh2B7Cw/exec",
+            gas: "https://script.google.com/macros/s/AKfycbxHRM4lnv3Apa-tqVc-Rg_6u1x6ugM7d-OXR2Fik9JFdaPisHg6VmGiXpWkmLddBncMhQ/exec",
             id: "",
             persons: {},
             person: {},
             loading: !1
         },
         methods: {
-            limitIdLen: function (t) {
-                if (t.length > 5) return this.id = this.id.slice(0, 5)
+            check: function () {
+                var n = this;
+                    if (void 0 === this.persons[this.id]) {
+                        this.loading = !0;
+                        var i = this.gas + "?id=" + this.id;
+                        fetch(i, {
+                            method: "POST"
+                        }).then((function (t) {
+                            
+                            return t.json()
+                        })).then((function (t) {
+                            if (Object.keys(t).length === 0) {
+                                alert('不在參加名單');
+                            }
+                            var a = t;
+                            n.persons[n.id] = t, n.person = t, n.loading = !1;
+                            var b = t.class_no;
+                        }))
+                }
             },
             submit: function () {
                 var n = this;
@@ -34,21 +51,8 @@
         watch: {
             id: function (t) {
                 var n = this;
-                if (5 === t.length) {
-                    if (void 0 === this.persons[this.id]) {
-                        this.loading = !0;
-                        var i = this.gas + "?id=" + this.id;
-                        fetch(i, {
-                            method: "POST"
-                        }).then((function (t) {
-                            return t.json()
-                        })).then((function (t) {
-                            if (Object.keys(t).length === 0) {
-                                alert('不在參加名單');
-                            }
-                            n.persons[n.id] = t, n.person = t, n.loading = !1;
-                        }))
-                    } else this.person = this.persons[this.id];
+                if (t.length!=null) {
+                    
                 }
             }
         }

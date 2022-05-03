@@ -20,15 +20,15 @@
             </div>
         </div>
         <div class="col page">
-            <div class="row-flex divGrid">
-                <h1>簽到頁面</h1>
-                <label>________________________</label>
+            <div class="row-flex divHead ">
                 <br>
+                <img src="taiSugar.png" />
+                <h1>簽到表單</h1>
                 <label class="Q" for="main_id">員工編號</label>
                 <label class="reMark" for="main_id">若無員編請填除英文外之身分證字號9碼</label>
                 <div class="two-col divContent">
-                    <input class="form-control leftCol" id="main_id" type="number" v-model="id" @input="limitIdLen(id)" />
-                    <div class="submit rightCol"><a href="#" @click.prevent="submit">送出</a></div>
+                    <input class="form-control col"  id="main_id" type="number" v-model="id" @input="limitIdLen(id)" />
+                    <div class="submit col"><a href="#" @click.prevent="check">確認</a></div>
                 </div>
                 <div class="two-col divContent">
                     <label class="Q col" for="name">姓名</label>
@@ -43,18 +43,57 @@
                 <div class="col">
                     <div class="two-col divContent">
                         <label class="Q col" for="class_no">訓練班編號</label>
-                        <input class="form-control col" id="class_no" type="text" v-model="person.class_no" :disabled="person.name == undefined" />
+                        <input class="form-control col" id="class_no" type="text" v-model="person.class_no" disabled="disabled" />
                     </div>
                 </div>
                 <div class="col">
                     <div class="two-col divContent">
-                        <label class="Q col" for="class_name">訓練班名稱</label>
-                        <input class="col form-control" id="class_name" type="number" v-model="person.class_name" :disabled="person.name == undefined" />
+                        <label class="Q col" for="class_name">訓練班名稱 </label>
+                        <input class="col form-control" id="class_name" type="number" v-model="person.class_name" disabled="disabled" />
                     </div>
                 </div>
             </div>
-            <div class="submit"><a href="#" :class="{ disabled: person.name == undefined || person.seat == undefined || person.temperature == undefined}" @click.prevent="submit">送出</a></div>
+            <div class="row-flex divGrid" >
+                <input class="hide" id="video" type="text" v-model="person.video" disabled="disabled" />
+                <div class="three-col divContent">
+                    <label class="Q leftCol" for="A101_orNot">是否總管理處上課</label>
+                    <label class="midCol"><input type="radio" id="A101_orNot" value="1">是</label>
+                    <label class="rightCol"><input type="radio" id="A101_orNot" value="0" required>否</label>
+                </div>
+            </div>
+            <input class="hide" id="meal" type="text" v-model="person.meal" disabled="disabled" />
+            <div class="row-flex divGrid">
+                <div class="three-col divContent">
+                    <label class="Q leftCol" for="meal">便當</label>
+                    <label class="midCol "><input type="radio" id="meal" value="1" required>葷</label>
+                    <label class="rightCol"><input type="radio" id="meal" value="0">素</label>
+                    
+                </div>
+                <input class="hide" id="live" type="text" v-model="person.live" disabled="disabled" />
+                <div class="three-col divContent">
+                    <label class="Q leftCol" for="live">住宿</label>
+                    <label class="midCol"><input type="radio" id="live" value="1">是</label>
+                    <label class="rightCol"><input type="radio" id="live" value="0" required>否</label>
+                </div>
+            </div>
+            <div class="row-flex divGrid">
+                <input class="hide" id="verify_st_no" type="text" v-model="person.verify_st_no" disabled="disabled" />
 
+                <div class="col">
+                    <div class="two-col divContent">
+                        <label class="Q col" for="st_no">學號</label>
+                        <input class="form-control col" id="st_no" type="text" v-model="person.st_no" :disabled="person.name == undefined" />
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="two-col divContent">
+                        <label class="Q col" for="temperature">體溫</label>
+                        <input class="col form-control" id="temperature" type="number" v-model="person.temperature" :disabled="person.name == undefined" />
+                    </div>
+                </div>
+                <div class="submit"><a href="#" :class="{ disabled: person.name == undefined || person.temperature == undefined}" @click.prevent="submit">送出</a></div>
+            </div>
+            
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
